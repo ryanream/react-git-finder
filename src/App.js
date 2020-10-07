@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import Navbar from './components/layout/Navbar';
+import UserItem from './components/users/UserItem';
 import './App.css';
 
-class App extends Component {
-  // life cycle method
+class App extends Component { 
+  // life cycle method? 
   render() {
-    
     return (
       <div className="App">
-        <h1>Ryan.</h1>
+        <Navbar />
+        <UserItem />
       </div> 
     );
   }
-
 
 }
 
