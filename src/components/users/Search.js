@@ -14,6 +14,7 @@ export class Search extends Component {
     searchUsers: PropTypes.func.isRequired,
     clearUsers: PropTypes.func.isRequired,
     showClear: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired,
   };
 
   // e.target.name is a key that will create a new state field? if email or phone is input?
@@ -22,9 +23,13 @@ export class Search extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // we need to pass this value up to the main component (App)
-    this.props.searchUsers(this.state.text);
-    this.setState({ text: "" });
+    if (this.state.text === "") {
+      this.props.setAlert("Please enter something to search.", "light");
+    } else {
+      // we need to pass this value up to the main component (App)
+      this.props.searchUsers(this.state.text);
+      this.setState({ text: "" });
+    }
   };
 
   render() {
