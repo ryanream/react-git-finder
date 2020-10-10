@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // class UserItem extends Component {
 // we also don't need render() any longer, just the return
@@ -12,23 +13,20 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   return (
     //   card
     <div className="card text-center">
-        {/* pic */}
+      {/* pic */}
       <img
         src={avatar_url}
         alt=""
         className="round-img"
         style={{ width: "60px" }}
       />
-      {/* User's name */}
       <h3>{login}</h3>
-      {/* div w/line break? */}
+      
       <div>
-          {/* line break? */}
         {" "}
-        {/* More button */}
-        <a href={html_url} className="btn btn-dark btn-sm my-1">
+        <Link to={`/user/${login}`} className="btn btn-dark btn-sm my-1">
           More
-        </a>
+        </Link>
       </div>
     </div>
   );
