@@ -11,8 +11,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
-  },
-  "homepage": "https://github.com/ryanream/react-git-finder.git",
+  },  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
